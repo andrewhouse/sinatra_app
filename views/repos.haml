@@ -1,0 +1,14 @@
+%h1
+  Who would you like to see the repositories for?
+  %form{:method => "POST"}
+    .form-group
+      %input.form-control{:name => "github_name", :placeholder => "Enter a github username", required: true, autofocus: true}
+
+-if @repos
+  %h3
+    = "Listing Repositories for #{@name}"
+    %br
+  .list-group
+    - @repos.each do |repo|
+      %a.list-group-item{href: repo["html_url"]}
+        = repo["name"]

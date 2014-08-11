@@ -1,0 +1,21 @@
+%html
+  %head
+    %link{:href=>"//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css", :rel=>"stylesheet"}
+    %title "Fun things!"
+  %body
+    %header
+      %ul.nav.nav-tabs
+        %li.active
+          %a(href="/")
+            Home
+        %li
+          %a(href='/times')
+            Times Table
+        %li
+          %a(href='/letters')
+            Letter Counter
+        %li
+          %a(href='/repos')
+            Github Repositories
+    .container
+      =yield

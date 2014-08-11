@@ -1,0 +1,22 @@
+
+.container
+  %form{:method => "POST"}
+    .form-group
+      %input.form-control{:name => "min", :placeholder => "Input the MINIMUM Number", required: true, autofocus: true}
+    .form-group
+      %input.form-control{:name => "max", :placeholder => "Input the MAXIMUM Number", required: true}
+    %button.btn{:type => 'submit'}
+      Submit
+  %table.table.table-striped
+    %thead
+      %tr
+        %th *
+        - @min.upto @max do |x|
+          %th= x
+
+    %tbody
+      - @min.upto @max do |x|
+        %tr
+          %th= x
+          - @min.upto @max do |y|
+            %td=x*y

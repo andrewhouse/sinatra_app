@@ -1,0 +1,16 @@
+%h1
+  This is the letter and/or number counter!
+  %h3
+    Enter some text so the letters and/or numbers can be counted.
+    %form{:method => "POST"}
+      .form-group
+        %input.form-control{:name => "word", :placeholder => "Enter word here.", required: true, autofocus: true}
+    - if @number_of_letters
+      %h3
+        = "You Entered '#{@words}'"
+      %br
+      - @number_of_letters.sort.each do |k,v|
+        %h3
+          = k
+          %span.label.label-primary
+            = v
