@@ -1,6 +1,7 @@
 require 'sinatra'
 require 'httparty'
 require './github.rb'
+require 'haml'
 
 get '/' do
   haml :index
