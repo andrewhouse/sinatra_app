@@ -16,7 +16,9 @@
     %tbody
       -@repos.each do |repo|
         %tr
-          %td= repo['name']
+          %td
+            %a{href: repo['html_url']}
+              =repo['name']
           %td= repo['size']
           %td= repo['description']
           %td= repo['created_at']
