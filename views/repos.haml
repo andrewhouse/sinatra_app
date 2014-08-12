@@ -5,10 +5,19 @@
       %input.form-control{:name => "github_name", :placeholder => "Enter a github username", value: @name, required: true, autofocus: true}
 
 -if @repos
-  %h3
-    = "Listing Repositories for #{@name}"
-    %br
-  .list-group
-    - @repos.each do |repo|
-      %a.list-group-item{href: repo["html_url"]}
-        = repo["name"]
+  %table.table.table-bordered.table-striped
+    %thead
+      %tr
+        %th Name
+        %th Size
+        %th Description
+        %th Created At
+        %th Updated At
+    %tbody
+      -@repos.each do |repo|
+        %tr
+          %td= repo['name']
+          %td= repo['size']
+          %td= repo['description']
+          %td= repo['created_at']
+          %td= repo['updated_at']
