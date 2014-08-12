@@ -1,16 +1,25 @@
+:css
+  body {
+    text-align: center;
+  },
+  th {
+    text-align: center;
+  }
 %h1
   This is the character counter!
   %h3
     Enter some text and the characters will be counted!
     %form.well{:method => "POST"}
       .form-group
-        %input.form-control{:name => "word", :placeholder => "Enter word here.", value: @words, required: true, autofocus: true}
+        %textarea.form-control{:name => "word", :placeholder => "Enter word here.", rows: 13, value: @words, required: true, autofocus: true}
     - if @number_of_letters
       %h3
         = "You Entered '#{@words}'"
       %br
       - @number_of_letters.sort.each do |k,v|
-        %h3
-          = k
-          %span.label.label-primary
-            = v
+        .panel.panel-primary.panel-heading
+          %h4
+            = k
+          .panel-body
+            %span.label.label-primary
+              = v
