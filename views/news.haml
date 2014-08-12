@@ -1,0 +1,23 @@
+%h1
+  %a{ href: @my_site }
+    Andrew House's Blog (My Blog!)
+.list-group
+  -@my_blog.each do |article|
+    %a.list-group-item{ href: "http://iamandrewhouse.com#{article[1]}" }
+      =article[0]
+
+%h1
+  %a{ href: @tiy_site }
+    The Iron Yard - Atlanta Blog
+.list-group
+  -@tiy.each do |article|
+    %a.list-group-item{ href: article[1] }
+      =article[0]
+
+%h1
+  %a{ href: @giz_site }
+    Gizmodo Articles
+.list-group
+  -@giz.each do |article|
+    %a.list-group-item{ href: article[1] }
+      =article[0]

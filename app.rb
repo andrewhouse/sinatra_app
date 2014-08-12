@@ -2,6 +2,7 @@ require 'sinatra'
 require 'httparty'
 require './github.rb'
 require 'haml'
+require './parse.rb'
 
 get '/' do
   haml :index
@@ -40,4 +41,18 @@ post '/repos' do
   @name = params[:github_name]
   @repos = Github.get("https://api.github.com/users/#{@name}/repos")
   haml :repos
+end
+
+get '/news' do
+  tiy_atl = Parse.new('.title > a', 'http://atlanta.theironyard.com/')
+  @tiy = tiy_atl.parsed
+  @tiy_site = tiy_atl.site
+  giz = Parse.new('header > h1 > a', 'http://www.gizmodo.com')
+  @giz = giz.parsed
+  @giz_site = giz.site
+  my_blog = Parse.new('h1 > a', 'http://iamandrewhouse.com')
+  @my_blog = my_blog.parsed
+  @my_site = my_blog.site
+  haml :news
+
 end
