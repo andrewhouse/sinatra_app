@@ -2,7 +2,7 @@
   Who would you like to see the repositories for?
   %form.well.well-lg{:method => "POST"}
     .form-group
-      %input.form-control{:name => "github_name", :placeholder => "Enter a github username", required: true, autofocus: true}
+      %input.form-control{:name => "github_name", :placeholder => "Enter a github username", value: @name, required: true, autofocus: true}
 
 -if @repos
   %h3

@@ -4,7 +4,7 @@
     Enter some text and the characters will be counted!
     %form.well{:method => "POST"}
       .form-group
-        %input.form-control{:name => "word", :placeholder => "Enter word here.", required: true, autofocus: true}
+        %input.form-control{:name => "word", :placeholder => "Enter word here.", value: @words, required: true, autofocus: true}
     - if @number_of_letters
       %h3
         = "You Entered '#{@words}'"
