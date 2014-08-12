@@ -44,15 +44,15 @@ post '/repos' do
 end
 
 get '/news' do
-  tiy_atl = Parse.new('.title > a', 'http://atlanta.theironyard.com/')
-  @tiy = tiy_atl.parsed
-  @tiy_site = tiy_atl.site
-  giz = Parse.new('header > h1 > a', 'http://www.gizmodo.com')
-  @giz = giz.parsed
-  @giz_site = giz.site
-  my_blog = Parse.new('header > h1 > a', 'http://iamandrewhouse.com')
-  @my_blog = my_blog.parsed
-  @my_site = my_blog.site
+  tiy_atl_data = Parse.new('.title > a', 'http://atlanta.theironyard.com/')
+  @tiy = tiy_atl_data.parsed
+  @tiy_site = tiy_atl_data.site
+  giz_data = Parse.new('header > h1 > a', 'http://www.gizmodo.com')
+  @giz = giz_data.parsed
+  @giz_site = giz_data.site
+  my_blog_data = Parse.new('header > h1 > a', 'http://iamandrewhouse.com')
+  @my_blog = my_blog_data.parsed
+  @my_site = my_blog_data.site
   haml :news
 
 end
