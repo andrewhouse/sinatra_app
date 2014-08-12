@@ -1,8 +1,8 @@
 %h1
-  This is the letter and/or number counter!
+  This is the character counter!
   %h3
-    Enter some text so the letters and/or numbers can be counted.
-    %form{:method => "POST"}
+    Enter some text and the characters will be counted!
+    %form.well{:method => "POST"}
       .form-group
         %input.form-control{:name => "word", :placeholder => "Enter word here.", required: true, autofocus: true}
     - if @number_of_letters
