@@ -39,7 +39,7 @@ end
 
 post '/repos' do
   @name = params[:github_name]
-  @repos = Github.get("https://api.github.com/users/#{@name}/repos")
+  @repos = Github.repos_for(@name)
   haml :repos
 end
 
