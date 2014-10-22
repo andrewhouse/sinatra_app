@@ -12,6 +12,7 @@
     %form.well{:method => "POST"}
       .form-group
         %textarea.form-control{:name => "word", :placeholder => "Enter word here.", rows: 13, value: @words, required: true, autofocus: true}
+      %button{'type' => 'submit'}Submit
     - if @number_of_letters
       %h3
         = "You Entered '#{@words}'"
